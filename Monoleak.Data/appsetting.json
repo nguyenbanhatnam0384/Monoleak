@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "MonoleakDb": "Server=.;Database=Monoleak;Trusted_Connection=True;TrustServerCertificate=True;"
+  }
+}

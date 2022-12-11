@@ -9,11 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monoleak.Application", "Mon
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monoleak.Data", "Monoleak.Data\Monoleak.Data.csproj", "{8B8CF35C-B866-4F73-A9CF-C1166E82017D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monoleak.BackendAPI", "Monoleak.BackendAPI\Monoleak.BackendAPI.csproj", "{E27E8671-CE1A-4560-AAAF-949C40C5BB46}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monoleak.Utilities", "Monoleak.Utilities\Monoleak.Utilities.csproj", "{28A0FFB5-7DE3-4958-90D9-9F113C80988C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monoleak.ViewModels", "Monoleak.ViewModels\Monoleak.ViewModels.csproj", "{C85CC6F9-92D3-434E-B8D4-9CE324C90B9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monoleak.BackendApi", "Monoleak.BackendApi\Monoleak.BackendApi.csproj", "{E8828A04-82AD-4488-9BCA-0C5F2DB18E8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,6 @@ Global
 		{8B8CF35C-B866-4F73-A9CF-C1166E82017D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B8CF35C-B866-4F73-A9CF-C1166E82017D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B8CF35C-B866-4F73-A9CF-C1166E82017D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E27E8671-CE1A-4560-AAAF-949C40C5BB46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E27E8671-CE1A-4560-AAAF-949C40C5BB46}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E27E8671-CE1A-4560-AAAF-949C40C5BB46}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E27E8671-CE1A-4560-AAAF-949C40C5BB46}.Release|Any CPU.Build.0 = Release|Any CPU
 		{28A0FFB5-7DE3-4958-90D9-9F113C80988C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{28A0FFB5-7DE3-4958-90D9-9F113C80988C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28A0FFB5-7DE3-4958-90D9-9F113C80988C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{C85CC6F9-92D3-434E-B8D4-9CE324C90B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C85CC6F9-92D3-434E-B8D4-9CE324C90B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C85CC6F9-92D3-434E-B8D4-9CE324C90B9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8828A04-82AD-4488-9BCA-0C5F2DB18E8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8828A04-82AD-4488-9BCA-0C5F2DB18E8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8828A04-82AD-4488-9BCA-0C5F2DB18E8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8828A04-82AD-4488-9BCA-0C5F2DB18E8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

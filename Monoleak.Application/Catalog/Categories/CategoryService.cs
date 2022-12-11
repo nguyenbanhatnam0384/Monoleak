@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Monoleak.Application.Catalog.Categories.Dtos;
-using Monoleak.Application.Catalog.Dtos;
+﻿using Azure.Core;
+using Microsoft.EntityFrameworkCore;
 using Monoleak.Data.EF;
 using Monoleak.Data.Entities;
 using Monoleak.Utilities.Exceptions;
+using Monoleak.ViewModels.Catalog.Categories;
+using Monoleak.ViewModels.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,12 +40,29 @@ namespace Monoleak.Application.Catalog.Categories
 
         public async Task<int> Edit(CategoryEditRequest request)
         {
-            throw new NotImplementedException();
+            var category = await _context.Categories.FindAsync(request.Id);
+
+            if (category == null) throw new MonoleakException($"Cannot find a category with id: {request.Id}");
+
+            category.Name = request.Name;
+
+            return await _context.SaveChangesAsync();
         }
 
         public async Task<List<CategoryViewModel>> GetAll()
         {
-            throw new NotImplementedException();
+            var query = from c in _context.Categories
+                        join tic in _context.TransactionInCategories on c.Id equals tic.CategoryId
+                        join t in _context.Transactions on tic.TransactionId equals t.Id
+                        select new { c, tic };
+
+            int totalRow = await query.CountAsync();
+            var data = await query.Select(x => new CategoryViewModel()
+            {
+                Id = x.c.Id,
+                Name = x.c.Name
+            }).ToListAsync();
+            return data;
         }
 
         public async Task<PagedResult<CategoryViewModel>> GetAllPaging(GetCategoryPagingRequest request)

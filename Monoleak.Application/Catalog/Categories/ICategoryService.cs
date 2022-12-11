@@ -1,5 +1,5 @@
-﻿using Monoleak.Application.Catalog.Categories.Dtos;
-using Monoleak.Application.Catalog.Dtos;
+﻿using Monoleak.ViewModels.Catalog.Categories;
+using Monoleak.ViewModels.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;

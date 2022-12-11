@@ -1,4 +1,4 @@
-namespace Monoleak.BackendAPI.Models
+namespace Monoleak.BackendApi.Models
 {
     public class ErrorViewModel
     {

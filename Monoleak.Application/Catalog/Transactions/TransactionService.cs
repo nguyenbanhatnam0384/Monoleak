@@ -1,5 +1,7 @@
 ﻿using Monoleak.Application.Catalog.Dtos;
 using Monoleak.Application.Catalog.Transactions.Dtos;
+using Monoleak.Data.EF;
+using Monoleak.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +12,19 @@ namespace Monoleak.Application.Catalog.Transactions
 {
     public class TransactionService : ITransactionService
     {
-        public Task<int> Create(TransactionCreateRequest request)
+        private readonly MonoleakDbContext _context;
+        public TransactionService(MonoleakDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+        public async Task<int> Create(TransactionCreateRequest request)
+        {
+            var transaction = new Transaction()
+            {
+                Name = request.Name,
+            };
+            _context.Categories.Add(transaction);
+            return await _context.SaveChangesAsync();
         }
 
         public Task<int> Delete(int TransactionId)

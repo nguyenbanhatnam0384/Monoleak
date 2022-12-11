@@ -19,6 +19,7 @@ namespace Monoleak.Data.Configurations
             builder.Property(x => x.Name).IsRequired();
             builder.Property(x => x.CreatedDate).IsRequired();
             builder.Property(x => x.Amount).IsRequired();
+            builder.Property(x => x.Description).HasMaxLength(500);
 
             builder.Property(x => x.Id).UseIdentityColumn();
 

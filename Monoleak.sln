@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monoleak.WebApp", "Monoleak.WebApp\Monoleak.WebApp.csproj", "{803C889C-2F59-49B7-A8B3-EFAD84C7F467}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monoleak.WebApp", "Monoleak.WebApp\Monoleak.WebApp.csproj", "{803C889C-2F59-49B7-A8B3-EFAD84C7F467}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monoleak.Application", "Monoleak.Application\Monoleak.Application.csproj", "{BF03635B-9A7F-426D-91CE-EEE3F05841F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monoleak.Application", "Monoleak.Application\Monoleak.Application.csproj", "{BF03635B-9A7F-426D-91CE-EEE3F05841F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monoleak.Data", "Monoleak.Data\Monoleak.Data.csproj", "{8B8CF35C-B866-4F73-A9CF-C1166E82017D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monoleak.Data", "Monoleak.Data\Monoleak.Data.csproj", "{8B8CF35C-B866-4F73-A9CF-C1166E82017D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monoleak.BackendAPI", "Monoleak.BackendAPI\Monoleak.BackendAPI.csproj", "{E27E8671-CE1A-4560-AAAF-949C40C5BB46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monoleak.Utilities", "Monoleak.Utilities\Monoleak.Utilities.csproj", "{28A0FFB5-7DE3-4958-90D9-9F113C80988C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{8B8CF35C-B866-4F73-A9CF-C1166E82017D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B8CF35C-B866-4F73-A9CF-C1166E82017D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B8CF35C-B866-4F73-A9CF-C1166E82017D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E27E8671-CE1A-4560-AAAF-949C40C5BB46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E27E8671-CE1A-4560-AAAF-949C40C5BB46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E27E8671-CE1A-4560-AAAF-949C40C5BB46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E27E8671-CE1A-4560-AAAF-949C40C5BB46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28A0FFB5-7DE3-4958-90D9-9F113C80988C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28A0FFB5-7DE3-4958-90D9-9F113C80988C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28A0FFB5-7DE3-4958-90D9-9F113C80988C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28A0FFB5-7DE3-4958-90D9-9F113C80988C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

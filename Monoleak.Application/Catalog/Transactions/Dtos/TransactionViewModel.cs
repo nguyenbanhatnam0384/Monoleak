@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Monoleak.Application.Catalog.Transactions
+namespace Monoleak.Application.Catalog.Transactions.Dtos
 {
-    internal interface ITransactionServise
+    public class TransactionViewModel
     {
     }
 }

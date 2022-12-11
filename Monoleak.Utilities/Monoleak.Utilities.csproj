@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Monoleak.Data\Monoleak.Data.csproj" />
-    <ProjectReference Include="..\Monoleak.Utilities\Monoleak.Utilities.csproj" />
-  </ItemGroup>
-
 </Project>

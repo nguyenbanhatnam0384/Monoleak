@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Monoleak.Application.Catalog.Transactions.Dtos
+namespace Monoleak.ViewModels.Catalog.Transactions
 {
-    public class TransactionCreateRequest
+    public class TransactionViewModel
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public decimal Amount { get; set; }
         public DateTime CreatedDate { get; set; }

@@ -1,12 +1,11 @@
-﻿using Monoleak.Application.Catalog.Dtos;
-using Monoleak.Data.Entities;
+﻿using Monoleak.ViewModels.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Monoleak.Application.Catalog.Categories.Dtos
+namespace Monoleak.ViewModels.Catalog.Categories
 {
     public class GetCategoryPagingRequest : PagingRequestBase
     {

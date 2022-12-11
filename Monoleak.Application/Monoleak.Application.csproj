@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Monoleak.Data\Monoleak.Data.csproj" />
     <ProjectReference Include="..\Monoleak.Utilities\Monoleak.Utilities.csproj" />
+    <ProjectReference Include="..\Monoleak.ViewModels\Monoleak.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

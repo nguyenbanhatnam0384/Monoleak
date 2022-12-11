@@ -1,6 +1,5 @@
-﻿using Monoleak.Application.Catalog.Categories.Dtos;
-using Monoleak.Application.Catalog.Dtos;
-using Monoleak.Application.Catalog.Transactions.Dtos;
+﻿using Monoleak.ViewModels.Catalog.Transactions;
+using Monoleak.ViewModels.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;

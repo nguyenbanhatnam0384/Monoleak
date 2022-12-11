@@ -1,14 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Monoleak.Application.Catalog.Categories.Dtos;
-using Monoleak.Application.Catalog.Transactions.Dtos;
+
 using Monoleak.Data.EF;
 using Monoleak.Data.Entities;
 using Monoleak.Utilities.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Monoleak.ViewModels.Catalog.Transactions;
+using Monoleak.ViewModels.Common;
 
 namespace Monoleak.Application.Catalog.Transactions
 {

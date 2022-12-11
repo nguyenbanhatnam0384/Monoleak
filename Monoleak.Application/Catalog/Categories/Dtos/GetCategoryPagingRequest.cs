@@ -11,6 +11,6 @@ namespace Monoleak.Application.Catalog.Categories.Dtos
     public class GetCategoryPagingRequest : PagingRequestBase
     {
         public string Keyword { get; set; }
-        public List<TransactionInCategory> TransactionInCategories { get; set; }
+        public List<int> TransactionIds { get; set; }
     }
 }

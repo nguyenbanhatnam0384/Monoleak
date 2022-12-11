@@ -1,7 +1,10 @@
-﻿using Monoleak.Application.Catalog.Dtos;
+﻿using Microsoft.EntityFrameworkCore;
+using Monoleak.Application.Catalog.Categories.Dtos;
+using Monoleak.Application.Catalog.Dtos;
 using Monoleak.Application.Catalog.Transactions.Dtos;
 using Monoleak.Data.EF;
 using Monoleak.Data.Entities;
+using Monoleak.Utilities.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,19 +25,33 @@ namespace Monoleak.Application.Catalog.Transactions
             var transaction = new Transaction()
             {
                 Name = request.Name,
+                Amount = request.Amount,
+                CreatedDate = DateTime.Now,
+                Description = request.Description,
             };
-            _context.Categories.Add(transaction);
+            _context.Transactions.Add(transaction);
             return await _context.SaveChangesAsync();
         }
 
-        public Task<int> Delete(int TransactionId)
+        public async Task<int> Delete(int TransactionId)
         {
-            throw new NotImplementedException();
+            var transaction = await _context.Transactions.FindAsync(TransactionId);
+            if (transaction == null) throw new MonoleakException($"Can not find a transaction: {TransactionId}");
+            _context.Transactions.Remove(transaction);
+            return await _context.SaveChangesAsync();
         }
 
-        public Task<int> Edit(TransactionEditRequest request)
+        public async Task<int> Edit(TransactionEditRequest request)
         {
-            throw new NotImplementedException();
+            var transaction = await _context.Transactions.FindAsync(request.Id);
+
+            if (transaction == null) throw new MonoleakException($"Cannot find a transaction with id: {request.Id}");
+
+            transaction.Description = request.Description;
+            transaction.Name = request.Name;
+            transaction.Amount = request.Amount;
+
+            return await _context.SaveChangesAsync();
         }
 
         public Task<List<TransactionViewModel>> GetAll()
@@ -42,9 +59,37 @@ namespace Monoleak.Application.Catalog.Transactions
             throw new NotImplementedException();
         }
 
-        public Task<PagedResult<TransactionViewModel>> GetAllPaging(GetTransactionPagingRequest request)
+        public async Task<PagedResult<TransactionViewModel>> GetAllPaging(GetTransactionPagingRequest request)
         {
-            throw new NotImplementedException();
+            //Select join
+            var query = from t in _context.Transactions
+                        join tic in _context.TransactionInCategories on t.Id equals tic.TransactionId
+                        join c in _context.Categories on tic.CategoryId equals c.Id
+                        select new { t, tic };
+            //Filter
+            if (request.CategoryIds.Count > 0)
+            {
+                query = query.Where(t => request.CategoryIds.Contains(t.tic.CategoryId));
+            }
+            //Paging
+            int totalRow = await query.CountAsync();
+            var data = await query.Skip((request.PageIndex - 1) * request.PageSize)
+                .Take(request.PageSize)
+                .Select(x => new TransactionViewModel()
+                {
+                    Id = x.t.Id,
+                    Name = x.t.Name,
+                    Amount = x.t.Amount,
+                    CreatedDate = x.t.CreatedDate,
+                    Description = x.t.Description,
+                }).ToListAsync();
+            //Select and projection
+            var pageResult = new PagedResult<TransactionViewModel>()
+            {
+                TotalRecord = totalRow,
+                Items = data
+            };
+            return pageResult;
         }
     }
 }

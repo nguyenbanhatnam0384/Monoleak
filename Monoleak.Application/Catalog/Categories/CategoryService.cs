@@ -55,13 +55,13 @@ namespace Monoleak.Application.Catalog.Categories
                         join t in _context.Transactions on tic.TransactionId equals t.Id
                         select new { c, tic };
             //Filter
-            //if (request.TransactionInCategories.Count > 0)
-            //{
-            //    query = query.Where(c => request.TransactionInCategories.Contains(c.tic.TransactionId));
-            //}
+            if (request.TransactionIds.Count > 0)
+            {
+                query = query.Where(c => request.TransactionIds.Contains(c.tic.TransactionId));
+            }
             //Paging
             int totalRow = await query.CountAsync();
-            var data = query.Skip((request.PageIndex - 1) * request.PageSize)
+            var data = await query.Skip((request.PageIndex - 1) * request.PageSize)
                 .Take(request.PageSize)
                 .Select(x => new CategoryViewModel()
                 {
@@ -74,6 +74,7 @@ namespace Monoleak.Application.Catalog.Categories
                 TotalRecord = totalRow,
                 Items = data
             };
+            return pageResult;
         }
     }
 }

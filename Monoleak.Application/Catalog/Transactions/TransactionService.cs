@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Monoleak.Application.Catalog.Categories.Dtos;
-using Monoleak.Application.Catalog.Dtos;
 using Monoleak.Application.Catalog.Transactions.Dtos;
 using Monoleak.Data.EF;
 using Monoleak.Data.Entities;

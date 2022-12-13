@@ -52,9 +52,9 @@ namespace Monoleak.Application.Catalog.Categories
         public async Task<List<CategoryViewModel>> GetAll()
         {
             var query = from c in _context.Categories
-                        join tic in _context.TransactionInCategories on c.Id equals tic.CategoryId
-                        join t in _context.Transactions on tic.TransactionId equals t.Id
-                        select new { c, tic };
+                        //join tic in _context.TransactionInCategories on c.Id equals tic.CategoryId
+                        //join t in _context.Transactions on tic.TransactionId equals t.Id
+                        select new { c/*, tic*/ };
 
             int totalRow = await query.CountAsync();
             var data = await query.Select(x => new CategoryViewModel()
